@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from datetime import datetime
-import uvicorn
 
 app = FastAPI(title="Time API", description="Simple API to get current time")
 
@@ -26,6 +25,3 @@ async def get_utc_time():
         "formatted_utc_time": utc_time.strftime("%Y-%m-%d %H:%M:%S UTC"),
         "utc_timestamp": utc_time.timestamp()
     }
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
